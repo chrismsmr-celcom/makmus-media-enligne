@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MakMus – Actualités, Société & Le Verbatim</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box}
+
+body{
+font-family:Roboto,sans-serif;
+margin:0;
+background:#fff;
+color:#111;
+line-height:1.6
+}
+
+a{text-decoration:none;color:inherit}
+img{max-width:100%;height:auto;display:block}
+
+/* HEADER */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 20px;
+border-bottom:2px solid #000;
+position:sticky;
+top:0;
+background:#fff;
+z-index:1000
+}
+
+.logo img{height:85px}
+
+/* NAV DESKTOP */
+nav ul{
+display:flex;
+gap:18px;
+list-style:none;
+margin:0;
+padding:0;
+font-weight:700
+}
+nav a:hover{color:#0056b3}
+
+/* BURGER */
+.menu-toggle{
+display:none;
+font-size:28px;
+cursor:pointer;
+user-select:none
+}
+
+/* HERO */
+.hero{
+max-width:1200px;
+margin:auto;
+padding:30px 20px
+}
+.hero img{
+width:100%;
+max-height:420px;
+object-fit:cover;
+border-radius:4px
+}
+.hero h1{
+font-size:36px;
+margin:20px 0 12px;
+line-height:1.25
+}
+.hero p{
+font-size:17px;
+color:#333;
+max-width:900px
+}
+
+/* SECTIONS */
+.section{
+max-width:1200px;
+margin:auto;
+padding:35px 20px
+}
+
+.section h2{
+font-size:26px;
+border-bottom:3px solid #000;
+display:inline-block;
+padding-bottom:6px;
+margin-bottom:22px
+}
+
+/* ARTICLES */
+.articles{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:22px
+}
+
+.article{
+border:1px solid #ddd;
+border-radius:4px;
+padding:15px;
+background:#fafafa;
+transition:.25s
+}
+.article:hover{
+box-shadow:0 6px 18px rgba(0,0,0,.15)
+}
+.article img{
+height:180px;
+object-fit:cover;
+border-radius:4px
+}
+.article h3{
+margin:12px 0 8px;
+font-size:20px;
+line-height:1.3
+}
+.article p{
+color:#555;
+font-size:15px
+}
+
+/* ABOUT */
+.about{
+background:#f4f4f4;
+border-left:5px solid #000;
+padding:25px;
+font-size:16px
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:25px 15px;
+font-size:14px;
+border-top:2px solid #000;
+background:#f9f9f9
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+
+header{
+flex-wrap:wrap;
+gap:10px
+}
+
+.logo img{height:65px}
+
+.menu-toggle{
+display:block
+}
+
+nav{
+width:100%;
+display:none
+}
+
+nav ul{
+flex-direction:column;
+gap:12px;
+padding:15px 0
+}
+
+nav.active{
+display:block
+}
+
+.hero{
+padding:20px 15px
+}
+
+.hero h1{
+font-size:26px
+}
+
+.hero p{
+font-size:16px
+}
+
+.section{
+padding:30px 15px
+}
+
+.section h2{
+font-size:22px
+}
+
+.article img{
+height:160px
+}
+
+.about{
+font-size:15px
+}
+}
+
+/* VERY SMALL SCREENS */
+@media(max-width:420px){
+.hero h1{font-size:23px}
+.article h3{font-size:18px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">
+<img src="https://i.postimg.cc/pLF5Wstw/1.png" alt="MakMus">
+</div>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+<nav>
+<ul>
+<li><a href="#">Accueil</a></li>
+<li><a href="#">Actualités</a></li>
+<li><a href="#">Faits Divers</a></li>
+<li><a href="#">Société</a></li>
+<li><a href="#">Science</a></li>
+<li><a href="#">Histoire</a></li>
+<li><a href="#">Culture</a></li>
+<li><a href="#">Le Verbatim</a></li>
+<li><a href="#">À propos</a></li>
+</ul>
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+<img src="https://transparenceinfo.com/wp-content/uploads/2025/12/img_9343.jpg" alt="RDC CAN">
+<h1>CAN :Pour leur entrée en lice dans la Coupe d'Afrique des Nations (CAN) Maroc 2025, les Léopards de la RDC ont dominé les Guépards du Bénin (1-0), ce mardi 23 décembre au stade Al Médina, Rabat, à l'occasion de la première journée du groupe D</h1>
+<p>
+Ces dernières semaines, sur le continent africain, la RDC est assurément l’équipe à suivre. Après avoir brillamment remporté le tournoi africain des barrages au Mondial 2022, les Léopards devaient confirmer leur statut de sérieux outsider lors de cette CAN 2025 au Maroc. Pour le premier match dans la compétition, les coéquipiers de Chancel Mbemba affrontaient le Bénin à Rabat. L’occasion pour Sébastien Desabre, coach de la RDC, de montrer qu’il peut compter sur un effectif tout de même très impressionnant</p>
+</section>
+
+<!-- ACCUEIL -->
+<section class="section">
+<h2>Accueil</h2>
+<p>
+Au-delà de la vie, la Mémoire s’exprime.
+
+Makmus est un média indépendant né de la conviction que la mémoire n’est pas un simple héritage du passé, mais une force vivante qui éclaire le présent et façonne l’avenir.
+À travers les mots, les idées et les récits, Makmus donne voix à ce qui résiste au silence : les vérités humaines, les luttes intimes et collectives, les trajectoires de vie qui portent du sens.
+
+Makmus observe le monde avec exigence, questionne sans complaisance et raconte avec courage. Ici, l’expression n’est pas un privilège, mais une responsabilité. Chaque contenu cherche à relier l’individu à l’universel, la mémoire à l’action, la pensée au courage de vivre.
+Makmus défend une ligne éditoriale libre, consciente et profondément humaine.
+
+La mémoire comme boussole : historique, sociale, culturelle ou intime, elle guide notre lecture du monde.
+
+La liberté d’expression comme pilier : dire ce qui dérange, éclairer ce qui est obscur, refuser la superficialité.
+
+Le courage intellectuel : analyser, critiquer et créer sans céder à la facilité ni au conformisme.
+
+Le sens de la vie dans sa globalité : politique, culture, société, spiritualité, identité, transmission.
+
+Makmus n’est pas un média de bruit, mais de trace.
+Un espace où la parole laisse une empreinte, où la mémoire dépasse la vie pour mieux la transformer.</p>
+</section>
+
+<!-- ACTUALITÉS -->
+<section class="section">
+<h2>Actualités</h2>
+<div class="articles">
+
+<div class="article">
+<img src="https://prod.cdn-medias.jeuneafrique.com/cdn-cgi/image/q=auto,f=auto,metadata=none,width=1215,fit=cover,gravity=0.5000x0.5000/https://prod.cdn-medias.jeuneafrique.com/medias/2025/02/25/jad20250225-ass-rdc-mines-cobalt.jpg" alt="">
+<h3>La RDC reprend ses exportations de</h3>
+<p>
+La République démocratique du Congo a repris ses exportations de cobalt après dix mois de suspension, a annoncé mardi le ministre des Finances, Doudou Fwamba.
+</p>
+</div>
+
+<div class="article">
+<img src="https://7sur7.cd/sites/default/files/styles/article_2022/public/2025-12/IMG-20251224-WA0011.jpg?itok=gWrAVtwl">
+<h3>Kinshasa - Gestion des déchets solides : La RASKIN installe des décharges mobiles dans plusieurs zones</h3>
+<p>
+La Régie d’Assainissement de Kinshasa (RASKIN) a procédé, le mardi 23 décembre 2025, à l’installation de décharges Mobiles dans plusieurs zones de la capitale, avec un démarrage effectif à Kingabwa, précisément sur les sites de Kabasele et BAT..
+</p>
+</div>
+
+</div>
+</section>
+
+<!-- INTERNATIONAL -->
+<section class="section">
+<h2>International</h2>
+<div class="articles">
+
+<div class="article">
+<img src="https://img.lemde.fr/2025/12/24/0/0/6272/4480/664/0/75/0/12fe5df_upload-1-8g2bd5ouoanv-075-radecka-volodymy251219-npnu1.jpg">
+<h3>Guerre en Ukraine : Zelensky dévoile la dernière version du plan de paix américain et pose ses conditions en vue d’une zone démilitarisée dans le Donbass</h3>
+<p>
+Le président ukrainien ouvre la porte à la création d’une zone démilitarisée supervisée par des « forces internationales » dans la partie du Donbass contrôlée par Kiev, en conditionnant le retrait des troupes ukrainiennes à celui de l’armée russe.
+
+</p>
+</div>
+
+<div class="article">
+<img src="https://img.lemde.fr/2025/12/23/0/0/6720/4480/664/0/75/0/6d81c63_upload-1-sz9cxaabsyfy-068-aa-21112020-201176.jpg">
+<h3>Mohammed Ali Ahmed Al-Haddad, le chef d’état-major libyen, meurt dans un accident d’avion en Turquie</h3>
+<p>
+L’appareil avait demandé un atterrissage d’urgence pour un dysfonctionnement électrique peu après son décollage d’Ankara, où une délégation libyenne était en visite.</p>
+</div>
+
+</div>
+</section>
+
+<!-- SOCIÉTÉ -->
+<section class="section">
+<h2>Société</h2>
+<div class="articles">
+
+<div class="article">
+<img src="https://pbs.twimg.com/media/G83ja4_agAA4pyQ?format=jpg&name=large">
+<h3>La ville de Kinshasa après la pluie</h3>
+<p>
+Après chaque pluie abondante, Kinshasa révèle une réalité bien connue de ses habitants : une ville courageuse, mais mise à rude épreuve par des infrastructures fragiles et une croissance urbaine mal maîtrisée...
+</p>
+</div>
+
+<div class="article">
+<img src="https://laprunelleverte.com/wp-content/uploads/2025/12/Assemblee-generale-des-Nations-unies.jpg">
+<h3>Les dirigeantes et dirigeants mondiaux adoptent une déclaration mondiale historique sur les maladies non transmissibles et la santé mentale</h3>
+<p>
+Les autorités multiplient les actions pour améliorer l’accès
+aux soins de base.
+</p>
+</div>
+
+</div>
+</section>
+
+<!-- SCIENCE -->
+<section class="section">
+<h2>Science & Technologie</h2>
+<div class="articles">
+
+<div class="article">
+<img src="https://static.techno-science.net/illustrationWebp/Libre/2025/04/04/28832b60-d3e3-4352-b539-600dd85e848f.jpg">
+<h3>L'IA consciente: le point de vue d'un philosophe</h3>
+<p>
+L'intelligence artificielle peut-elle devenir consciente ? Cette interrogation, autrefois confinée aux récits de science-fiction, occupe désormais une place centrale dans les discussions éthiques et scientifiques.</p>
+</div>
+
+<div class="article">
+<img src="https://www.unesco.org/sites/default/files/styles/paragraph_medium_tablet/article/2024-09/EDPHOTO%20998995%20UCA49%20UNESCOPHOTO%20%289%29.jpg.webp?itok=bi48g8DY">
+<h3>Éducation, science et technologie en afrique</h3>
+<p>
+La réalisation de l’Aspiration 1 de l’ Agenda 2063 , à savoir « Une Afrique prospère fondée sur la croissance inclusive et le développement durable », exige que l’Afrique fasse d’importants investissements dans le domaine de l’éducation afin de développer son capital humain et social par une révolution de l’éducation et des compétences en mettant l’accent sur l’innovation, la science et la technologie.</p>
+</div>
+
+</div>
+</section>
+
+<!-- HISTOIRE -->
+<section class="section">
+<h2>Histoire</h2>
+<div class="articles">
+
+<div class="article">
+<img src="https://static.nationalgeographic.fr/files/styles/image_3200/public/ap17291337952115.webp?w=537&h=537">
+<h3>Ankhésenpépi II : la reine égyptienne qui voulait être pharaonne pour l’éternité</h3>
+<p>
+Retour sur les grandes étapes qui ont façonné
+l’État congolais moderne.
+</p>
+</div>
+
+<div class="article">
+<img src="https://static.nationalgeographic.fr/files/styles/image_3200/public/bal1160736.webp?w=900&h=1020">
+<h3>Sur les traces de l’étoile de Bethléem : qu'en dit l'archéologie ?</h3>
+<p>
+L'étoile de Bethléem guidant les rois mages est l’une des scènes les plus reconnaissables de l’imaginaire chrétien : un signe brillant resplendissant au-dessus du lieu où un enfant est né, menant de mystérieux visiteurs venus d’Orient jusqu’au berceau d’un roi nouveau-né. L’Évangile selon Matthieu, le seul livre de la Bible à mentionner cet épisode, décrit une étoile qui s’est levée à l’est, qui a attiré l’attention de « mages » (probablement des prêtres-astrologues de Babylonie ou de Perse), et s’est déplacée devant eux jusqu’à s’arrêter au-dessus du lieu où se trouvait Jésus.</p>
+</div>
+
+</div>
+</section>
+
+<!-- CULTURE -->
+<section class="section">
+<h2>Culture</h2>
+<div class="articles">
+
+<div class="article">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9-HAqahVMZJGiMJjHWmz1QD7hmXCvgosoRg&s">
+<h3>A Paris-La Défense Arena, Gims déroule ses tubes dans une relative solitude</h3>
+<p>
+Rassembler 200 000 personnes en quatre jours. C’est l’exploit que réalise le rappeur Gims en donnant cinq concerts à Paris-La Defense Arena, du 19 au 22 décembre, dont deux samedi, à 14 heures et à 20 heures. Le début d’après-midi, l’heure idéale pour les enfants et les préados qui chantent désormais ses morceaux dans les cours de récréation, de Ciel à Parisienne, en passant par Ninao, des chansons toutes publiées en 2025 et certifiées singles de diamant (50 millions d’équivalents streams).</p>
+</div>
+
+<div class="article">
+<img src="https://academie-kinshasa.cd/wp-content/uploads/2025/12/IMG-20251130-WA0082-scaled-800x530.jpg">
+<h3>exposition survivre rallume la flamme de la résilience</h3>
+<p>
+L’Académie des Beaux-Arts de Kinshasa a accueilli le samedi 29 novembre le vernissage de l’exposition collective Survivre. Entre préservation de la mémoire et documentation d’autant plus significative de la vie quotidienne dans les zones de conflits, Survivre exprime la résilience de la population de la ville de Goma..
+</p>
+</div>
+
+</div>
+</section>
+
+<!-- LE VERBATIM -->
+<section class="section">
+<h2>Le Verbatim</h2>
+<p>
+<strong>Le Verbatim</strong> est le journal hebdomadaire de MakMus.
+Un espace d’analyse, d’opinion et de réflexion,
+dans la tradition du journalisme de fond.
+</p>
+<a href="#" style="font-weight:700;color:#0056b3">Lire le dernier numéro</a>
+</section>
+
+<!-- A PROPOS -->
+<section class="section">
+<h2>À propos</h2>
+<div class="about">
+<p>
+MakMus est né pour honorer le journalisme,
+la mémoire et la transmission.
+Inspiré par l’exigence des grands titres internationaux,
+le média défend une information sérieuse,
+structurée et responsable.
+</p>
+<p>
+MakMus, c’est informer avec dignité.
+</p>
+</div>
+</section>
+
+<footer>
+© 2025 MakMus – Média indépendant congolais | contact@makmus.com
+</footer>
+<script>
+function toggleMenu(){
+  document.querySelector('nav').classList.toggle('active');
+}
+</script>
+<!-- === FLOATING GAMES WIDGET === -->
+<style>
+#games-fab {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #111;
+  color: #fff;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 6px 15px rgba(0,0,0,.3);
+}
+
+#games-panel {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 300px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  display: none;
+  z-index: 9999;
+  box-shadow: 0 10px 25px rgba(0,0,0,.25);
+}
+
+#games-panel header {
+  padding: 10px 15px;
+  font-weight: bold;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+}
+
+#games-panel button {
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  width: 100%;
+  margin: 8px 0;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#game-area {
+  padding: 10px;
+  text-align: center;
+}
+canvas { background:#000; display:block; margin:auto; }
+input{font-weight:bold;font-size:16px;}
+</style>
+
+<div id="games-fab">♟️</div>
+
+<div id="games-panel">
+  <header>
+    Jeux
+    <span style="cursor:pointer" onclick="closeGames()">✕</span>
+  </header>
+  <div id="game-area">
+    <button onclick="startSnake()">🐍 Serpent</button>
+    <button onclick="startSudoku()">🧩 Sudoku</button>
+    <div id="game-content"></div>
+  </div>
+</div>
+
+<script>
+const fab = document.getElementById("games-fab");
+const panel = document.getElementById("games-panel");
+const content = document.getElementById("game-content");
+
+fab.onclick = () => panel.style.display = "block";
+function closeGames(){ panel.style.display="none"; content.innerHTML=""; }
+
+/* === SNAKE GAME === */
+function startSnake(){
+  content.innerHTML = '<canvas id="snake" width="260" height="260"></canvas>';
+  const c = document.getElementById("snake");
+  const ctx = c.getContext("2d");
+  let x=120,y=120,dx=20,dy=0,foodX=100,foodY=100,trail=[];
+  
+  document.onkeydown=e=>{
+    if(e.key==="ArrowUp"){dx=0;dy=-20;}
+    if(e.key==="ArrowDown"){dx=0;dy=20;}
+    if(e.key==="ArrowLeft"){dx=-20;dy=0;}
+    if(e.key==="ArrowRight"){dx=20;dy=0;}
+  };
+
+  setInterval(()=>{
+    x+=dx;y+=dy;
+    if(x<0||y<0||x>240||y>240){trail=[];x=120;y=120;}
+    ctx.fillStyle="black";ctx.fillRect(0,0,260,260);
+    ctx.fillStyle="lime";
+    trail.push({x,y});
+    if(trail.length>5)trail.shift();
+    trail.forEach(t=>ctx.fillRect(t.x,t.y,18,18));
+    ctx.fillStyle="red";ctx.fillRect(foodX,foodY,18,18);
+    if(x===foodX&&y===foodY){
+      foodX=Math.floor(Math.random()*13)*20;
+      foodY=Math.floor(Math.random()*13)*20;
+      trail.push({x,y});
+    }
+  },150);
+}
+
+/* === SUDOKU JOUABLE === */
+function startSudoku(){
+  content.innerHTML = `
+    <p style="font-size:14px;margin-bottom:5px;">Sudoku - Complétez la grille</p>
+    <table style="margin:auto;border-collapse:collapse;">
+      ${[0,1,2,3,4,5,6,7,8].map(r=>{
+        const rows = [
+          [5,3,null,null,7,null,null,null,null],
+          [6,null,null,1,9,5,null,null,null],
+          [null,9,8,null,null,null,null,6,null],
+          [8,null,null,null,6,null,null,null,3],
+          [4,null,null,8,null,3,null,null,1],
+          [7,null,null,null,2,null,null,null,6],
+          [null,6,null,null,null,null,2,8,null],
+          [null,null,null,4,1,9,null,null,5],
+          [null,null,null,null,8,null,null,7,9]
+        ];
+        return `<tr>`+
+        rows[r].map(c=>`<td style="border:1px solid #333;width:30px;height:30px">
+          <input style="width:100%;height:100%;border:0;text-align:center;font-weight:bold;font-size:16px"
+                 maxlength="1" value="${c!==null?c:""}" ${c!==null?"readonly":""}>
+        </td>`).join("")+
+        `</tr>`;
+      }).join("")}
+    </table>
+    <div style="text-align:center;margin-top:10px;">
+      <button style="background:#111;color:#fff;padding:6px 12px;border-radius:4px;margin-top:5px;" onclick="checkSudoku()">Vérifier</button>
+      <p id="sudoku-msg" style="margin-top:5px;color:#d00;font-weight:bold;"></p>
+    </div>
+  `;
+}
+
+function checkSudoku(){
+  const table = content.querySelector("table");
+  const inputs = table.querySelectorAll("input");
+  const solution = [
+    [5,3,4,6,7,8,9,1,2],
+    [6,7,2,1,9,5,3,4,8],
+    [1,9,8,3,4,2,5,6,7],
+    [8,5,9,7,6,1,4,2,3],
+    [4,2,6,8,5,3,7,9,1],
+    [7,1,3,9,2,4,8,5,6],
+    [9,6,1,5,3,7,2,8,4],
+    [2,8,7,4,1,9,6,3,5],
+    [3,4,5,2,8,6,1,7,9]
+  ];
+
+  let correct = true;
+  inputs.forEach((inp,i)=>{
+    const r = Math.floor(i/9), c = i%9;
+    if(parseInt(inp.value)!==solution[r][c]) correct=false;
+  });
+
+  const msg = document.getElementById("sudoku-msg");
+  msg.textContent = correct ? "✅ Sudoku correct ! Bravo !" : "❌ Il reste des erreurs...";
+}
+</script>
+<!-- === END FLOATING GAMES === -->
+<!-- === POPUP SPONSOR TERRA VOYAGE AVEC FOND FLOU === -->
+<style>
+/* Flou de fond */
+#popup-backdrop {
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(4px);
+  z-index: 99998;
+  display: none;
+}
+
+/* Popup principale */
+#popup-ad {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 90%;
+  max-width: 400px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.3);
+  padding: 20px;
+  z-index: 99999;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  font-family: Arial, sans-serif;
+}
+#popup-ad.show { transform: translate(-50%, -50%) scale(1); }
+
+#popup-ad h3 { margin: 0 0 10px; font-size: 18px; }
+#popup-ad p { font-size: 14px; color: #333; margin-bottom: 15px; }
+#popup-ad button { background:#111;color:#fff;border:none;padding:10px 20px;border-radius:5px;cursor:pointer;font-weight:700; margin-top:10px; }
+#popup-ad .close { position:absolute; top:8px; right:12px; cursor:pointer; font-size:20px; }
+
+/* Instagram embed */
+#popup-ad iframe { width:100%; height:300px; border:none; border-radius:6px; }
+
+/* Responsive mobile */
+@media(max-width:480px){
+  #popup-ad iframe { height:250px; }
+  #popup-ad h3 { font-size:16px; }
+  #popup-ad p { font-size:13px; }
+}
+</style>
+
+<div id="popup-backdrop"></div>
+
+<div id="popup-ad">
+  <span class="close" onclick="closePopup()">✕</span>
+  <h3>PUBLICITE</h3>
+  <p>Découvrez l’offre spéciale et nos voyages exclusifs.</p>
+  <iframe src="https://www.instagram.com/p/DRta8SgjK3b/embed" allowtransparency="true" allowfullscreen></iframe>
+  <button onclick="window.open('https://www.instagram.com/terra_voyage','_blank')">Voir sur Instagram</button>
+</div>
+
+<script>
+function showPopup(){
+  document.getElementById('popup-ad').classList.add('show');
+  document.getElementById('popup-backdrop').style.display = 'block';
+}
+
+function closePopup(){
+  document.getElementById('popup-ad').classList.remove('show');
+  document.getElementById('popup-backdrop').style.display = 'none';
+}
+
+// Affiche la popup 2 secondes après le chargement
+window.onload = () => setTimeout(showPopup, 2000);
+</script>
+
+</body>
+</html>
+
