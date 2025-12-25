@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+<link rel="icon" href="https://i.postimg.cc/x88LbhZp/2-20251224-213424-0001.png" type="image/png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MakMus – Actualités, Société & Le Verbatim</title>
+<meta name="description" content="MakMus – Actualités, Société, Culture et Science en RDC et dans le monde.">
+<meta name="keywords" content="MakMus, actualités, RDC, culture, société, science, sport">
+<meta property="og:title" content="MakMus – Actualités, Société & Le Verbatim">
+<meta property="og:description" content="MakMus – Les informations essentielles de RDC et du monde.">
+<meta property="og:image" content="https://i.postimg.cc/pLF5Wstw/1.png">
+<meta property="og:url" content="https://www.makmus.com">
+<meta name="twitter:card" content="summary_large_image">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MakMus – Actualités, Société & Le Verbatim</title>
@@ -11,233 +21,244 @@
 *{box-sizing:border-box}
 
 body{
-font-family:Roboto,sans-serif;
-margin:0;
-background:#fff;
-color:#111;
-line-height:1.6
+  font-family:Roboto,sans-serif;
+  margin:0;
+  background:#fff;
+  color:#111;
+  line-height:1.6;
 }
 
-a{text-decoration:none;color:inherit}
+a{text-decoration:none;color:inherit; display:block}
 img{max-width:100%;height:auto;display:block}
 
 /* HEADER */
+
 header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 20px;
-border-bottom:2px solid #000;
-position:sticky;
-top:0;
-background:#fff;
-z-index:1000
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 20px;
+  border-bottom:2px solid #000;
+  position:sticky;
+  top:0;
+  background:#fff;
+  z-index:9999;
 }
 
 .logo img{height:85px}
 
 /* NAV DESKTOP */
 nav ul{
-display:flex;
-gap:18px;
-list-style:none;
-margin:0;
-padding:0;
-font-weight:700
+  display:flex;
+  gap:18px;
+  list-style:none;
+  margin:0;
+  padding:0;
+  font-weight:700;
 }
 nav a:hover{color:#0056b3}
 
 /* BURGER */
 .menu-toggle{
-display:none;
-font-size:28px;
-cursor:pointer;
-user-select:none
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+  user-select:none;
 }
 
 /* HERO */
 .hero{
-max-width:1200px;
-margin:auto;
-padding:30px 20px
+  max-width:1200px;
+  margin:auto;
+  padding:30px 20px;
 }
 .hero img{
-width:100%;
-max-height:420px;
-object-fit:cover;
-border-radius:4px
+  width:100%;
+  max-height:420px;
+  object-fit:cover;
+  border-radius:4px;
 }
 .hero h1{
-font-size:36px;
-margin:20px 0 12px;
-line-height:1.25
+  font-size:36px;
+  margin:20px 0 12px;
+  line-height:1.25;
 }
 .hero p{
-font-size:17px;
-color:#333;
-max-width:900px
+  font-size:17px;
+  color:#333;
+  max-width:900px;
 }
 
 /* SECTIONS */
 .section{
-max-width:1200px;
-margin:auto;
-padding:35px 20px
+  max-width:1200px;
+  margin:auto;
+  padding:35px 20px;
 }
 
 .section h2{
-font-size:26px;
-border-bottom:3px solid #000;
-display:inline-block;
-padding-bottom:6px;
-margin-bottom:22px
+  font-size:26px;
+  border-bottom:3px solid #000;
+  display:inline-block;
+  padding-bottom:6px;
+  margin-bottom:22px;
 }
 
 /* ARTICLES */
 .articles{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:22px
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:22px;
 }
 
 .article{
-border:1px solid #ddd;
-border-radius:4px;
-padding:15px;
-background:#fafafa;
-transition:.25s
+  border:1px solid #ddd;
+  border-radius:4px;
+  padding:15px;
+  background:#fafafa;
+  transition:.25s;
 }
 .article:hover{
-box-shadow:0 6px 18px rgba(0,0,0,.15)
+  box-shadow:0 6px 18px rgba(0,0,0,.15);
 }
 .article img{
-height:180px;
-object-fit:cover;
-border-radius:4px
+  height:180px;
+  object-fit:cover;
+  border-radius:4px;
 }
 .article h3{
-margin:12px 0 8px;
-font-size:20px;
-line-height:1.3
+  margin:12px 0 8px;
+  font-size:20px;
+  line-height:1.3;
 }
 .article p{
-color:#555;
-font-size:15px
+  color:#555;
+  font-size:15px;
 }
 
 /* ABOUT */
 .about{
-background:#f4f4f4;
-border-left:5px solid #000;
-padding:25px;
-font-size:16px
+  background:#f4f4f4;
+  border-left:5px solid #000;
+  padding:25px;
+  font-size:16px;
 }
 
 /* FOOTER */
 footer{
-text-align:center;
-padding:25px 15px;
-font-size:14px;
-border-top:2px solid #000;
-background:#f9f9f9
+  text-align:center;
+  padding:25px 15px;
+  font-size:14px;
+  border-top:2px solid #000;
+  background:#f9f9f9;
 }
 
 /* ================= MOBILE ================= */
 @media(max-width:768px){
+  header{
+    flex-wrap:wrap;
+    gap:10px;
+  }
 
-header{
-flex-wrap:wrap;
-gap:10px
-}
+  .logo img{height:65px}
 
-.logo img{height:65px}
+  .menu-toggle{
+    display:block;
+  }
 
-.menu-toggle{
-display:block
-}
+  nav{
+    width:100%;
+    display:none;
+  }
 
-nav{
-width:100%;
-display:none
-}
+  nav ul{
+    flex-direction:column;
+    gap:12px;
+    padding:15px 0;
+  }
 
-nav ul{
-flex-direction:column;
-gap:12px;
-padding:15px 0
-}
+  nav.active{
+    display:block;
+  }
 
-nav.active{
-display:block
-}
+  .hero{
+    padding:20px 15px;
+  }
 
-.hero{
-padding:20px 15px
-}
+  .hero h1{
+    font-size:26px;
+  }
 
-.hero h1{
-font-size:26px
-}
+  .hero p{
+    font-size:16px;
+  }
 
-.hero p{
-font-size:16px
-}
+  .section{
+    padding:30px 15px;
+  }
 
-.section{
-padding:30px 15px
-}
+  .section h2{
+    font-size:22px;
+  }
 
-.section h2{
-font-size:22px
-}
+  .article img{
+    height:160px;
+  }
 
-.article img{
-height:160px
-}
-
-.about{
-font-size:15px
-}
+  .about{
+    font-size:15px;
+  }
 }
 
 /* VERY SMALL SCREENS */
 @media(max-width:420px){
-.hero h1{font-size:23px}
-.article h3{font-size:18px}
+  .hero h1{font-size:23px}
+ 
 }
 </style>
 </head>
-
 <body>
 
 <header>
-<div class="logo">
-<img src="https://i.postimg.cc/pLF5Wstw/1.png" alt="MakMus">
-</div>
-<div class="menu-toggle" onclick="toggleMenu()">☰</div>
-<nav>
-<ul>
-<li><a href="#">Accueil</a></li>
-<li><a href="#">Actualités</a></li>
-<li><a href="#">Faits Divers</a></li>
-<li><a href="#">Société</a></li>
-<li><a href="#">Science</a></li>
-<li><a href="#">Histoire</a></li>
-<li><a href="#">Culture</a></li>
-<li><a href="#">Le Verbatim</a></li>
-<li><a href="#">À propos</a></li>
-</ul>
-</nav>
+  <div class="logo">
+      <img src="https://i.postimg.cc/6Q1ZxYqH/Screenshot-2025-12-24-21-32-24-removebg-preview.png" alt="MakMus Logo">
+  </div>
+  <div class="menu-toggle" id="menu-toggle">☰</div>
+  <nav id="nav">
+    <ul>
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#actualites">Actualités</a></li>
+      <li><a href="#faits-divers">Faits Divers</a></li>
+      <li><a href="#societe">Société</a></li>
+      <li><a href="#science">Science</a></li>
+      <li><a href="#histoire">Histoire</a></li>
+      <li><a href="#culture">Culture</a></li>
+      <li><a href="#verbatim">Le Verbatim</a></li>
+      <li><a href="#apropos">À propos</a></li>
+    </ul>
+  </nav>
 </header>
+
+<script>
+const menuToggle = document.getElementById('menu-toggle');
+const nav = document.getElementById('nav');
+
+menuToggle.addEventListener('click', () => {
+  nav.classList.toggle('active');
+});
+</script>
 
 <!-- HERO -->
 <section class="hero">
-<img src="https://transparenceinfo.com/wp-content/uploads/2025/12/img_9343.jpg" alt="RDC CAN">
-<h1>CAN :Pour leur entrée en lice dans la Coupe d'Afrique des Nations (CAN) Maroc 2025, les Léopards de la RDC ont dominé les Guépards du Bénin (1-0), ce mardi 23 décembre au stade Al Médina, Rabat, à l'occasion de la première journée du groupe D</h1>
-<p>
-Ces dernières semaines, sur le continent africain, la RDC est assurément l’équipe à suivre. Après avoir brillamment remporté le tournoi africain des barrages au Mondial 2022, les Léopards devaient confirmer leur statut de sérieux outsider lors de cette CAN 2025 au Maroc. Pour le premier match dans la compétition, les coéquipiers de Chancel Mbemba affrontaient le Bénin à Rabat. L’occasion pour Sébastien Desabre, coach de la RDC, de montrer qu’il peut compter sur un effectif tout de même très impressionnant</p>
+  <a id="hero-link" href="#" target="_blank">
+    <img id="hero-img" src="" alt="">
+    <div class="hero-content">
+      <h1 id="hero-title"></h1>
+      <p id="hero-desc"></p>
+      <span class="hero-read">Lire la suite →</span>
+    </div>
+  </a>
 </section>
-
 <!-- ACCUEIL -->
 <section class="section">
 <h2>Accueil</h2>
@@ -262,148 +283,169 @@ Makmus n’est pas un média de bruit, mais de trace.
 Un espace où la parole laisse une empreinte, où la mémoire dépasse la vie pour mieux la transformer.</p>
 </section>
 
-<!-- ACTUALITÉS -->
+<body>
+
+<!-- SECTIONS DYNAMIQUES -->
 <section class="section">
-<h2>Actualités</h2>
-<div class="articles">
-
-<div class="article">
-<img src="https://prod.cdn-medias.jeuneafrique.com/cdn-cgi/image/q=auto,f=auto,metadata=none,width=1215,fit=cover,gravity=0.5000x0.5000/https://prod.cdn-medias.jeuneafrique.com/medias/2025/02/25/jad20250225-ass-rdc-mines-cobalt.jpg" alt="">
-<h3>La RDC reprend ses exportations de</h3>
-<p>
-La République démocratique du Congo a repris ses exportations de cobalt après dix mois de suspension, a annoncé mardi le ministre des Finances, Doudou Fwamba.
-</p>
-</div>
-
-<div class="article">
-<img src="https://7sur7.cd/sites/default/files/styles/article_2022/public/2025-12/IMG-20251224-WA0011.jpg?itok=gWrAVtwl">
-<h3>Kinshasa - Gestion des déchets solides : La RASKIN installe des décharges mobiles dans plusieurs zones</h3>
-<p>
-La Régie d’Assainissement de Kinshasa (RASKIN) a procédé, le mardi 23 décembre 2025, à l’installation de décharges Mobiles dans plusieurs zones de la capitale, avec un démarrage effectif à Kingabwa, précisément sur les sites de Kabasele et BAT..
-</p>
-</div>
-
-</div>
+  <h2>Actualités</h2>
+  <div class="articles" id="news-politics"></div>
 </section>
 
-<!-- INTERNATIONAL -->
 <section class="section">
-<h2>International</h2>
-<div class="articles">
-
-<div class="article">
-<img src="https://img.lemde.fr/2025/12/24/0/0/6272/4480/664/0/75/0/12fe5df_upload-1-8g2bd5ouoanv-075-radecka-volodymy251219-npnu1.jpg">
-<h3>Guerre en Ukraine : Zelensky dévoile la dernière version du plan de paix américain et pose ses conditions en vue d’une zone démilitarisée dans le Donbass</h3>
-<p>
-Le président ukrainien ouvre la porte à la création d’une zone démilitarisée supervisée par des « forces internationales » dans la partie du Donbass contrôlée par Kiev, en conditionnant le retrait des troupes ukrainiennes à celui de l’armée russe.
-
-</p>
-</div>
-
-<div class="article">
-<img src="https://img.lemde.fr/2025/12/23/0/0/6720/4480/664/0/75/0/6d81c63_upload-1-sz9cxaabsyfy-068-aa-21112020-201176.jpg">
-<h3>Mohammed Ali Ahmed Al-Haddad, le chef d’état-major libyen, meurt dans un accident d’avion en Turquie</h3>
-<p>
-L’appareil avait demandé un atterrissage d’urgence pour un dysfonctionnement électrique peu après son décollage d’Ankara, où une délégation libyenne était en visite.</p>
-</div>
-
-</div>
+  <h2>International</h2>
+  <div class="articles" id="news-world"></div>
 </section>
 
-<!-- SOCIÉTÉ -->
 <section class="section">
-<h2>Société</h2>
-<div class="articles">
-
-<div class="article">
-<img src="https://pbs.twimg.com/media/G83ja4_agAA4pyQ?format=jpg&name=large">
-<h3>La ville de Kinshasa après la pluie</h3>
-<p>
-Après chaque pluie abondante, Kinshasa révèle une réalité bien connue de ses habitants : une ville courageuse, mais mise à rude épreuve par des infrastructures fragiles et une croissance urbaine mal maîtrisée...
-</p>
-</div>
-
-<div class="article">
-<img src="https://laprunelleverte.com/wp-content/uploads/2025/12/Assemblee-generale-des-Nations-unies.jpg">
-<h3>Les dirigeantes et dirigeants mondiaux adoptent une déclaration mondiale historique sur les maladies non transmissibles et la santé mentale</h3>
-<p>
-Les autorités multiplient les actions pour améliorer l’accès
-aux soins de base.
-</p>
-</div>
-
-</div>
+  <h2>Société</h2>
+  <div class="articles" id="news-society"></div>
 </section>
 
-<!-- SCIENCE -->
 <section class="section">
-<h2>Science & Technologie</h2>
-<div class="articles">
-
-<div class="article">
-<img src="https://static.techno-science.net/illustrationWebp/Libre/2025/04/04/28832b60-d3e3-4352-b539-600dd85e848f.jpg">
-<h3>L'IA consciente: le point de vue d'un philosophe</h3>
-<p>
-L'intelligence artificielle peut-elle devenir consciente ? Cette interrogation, autrefois confinée aux récits de science-fiction, occupe désormais une place centrale dans les discussions éthiques et scientifiques.</p>
-</div>
-
-<div class="article">
-<img src="https://www.unesco.org/sites/default/files/styles/paragraph_medium_tablet/article/2024-09/EDPHOTO%20998995%20UCA49%20UNESCOPHOTO%20%289%29.jpg.webp?itok=bi48g8DY">
-<h3>Éducation, science et technologie en afrique</h3>
-<p>
-La réalisation de l’Aspiration 1 de l’ Agenda 2063 , à savoir « Une Afrique prospère fondée sur la croissance inclusive et le développement durable », exige que l’Afrique fasse d’importants investissements dans le domaine de l’éducation afin de développer son capital humain et social par une révolution de l’éducation et des compétences en mettant l’accent sur l’innovation, la science et la technologie.</p>
-</div>
-
-</div>
+  <h2>Science & Technologie</h2>
+  <div class="articles" id="news-tech"></div>
 </section>
 
-<!-- HISTOIRE -->
 <section class="section">
-<h2>Histoire</h2>
-<div class="articles">
-
-<div class="article">
-<img src="https://static.nationalgeographic.fr/files/styles/image_3200/public/ap17291337952115.webp?w=537&h=537">
-<h3>Ankhésenpépi II : la reine égyptienne qui voulait être pharaonne pour l’éternité</h3>
-<p>
-Retour sur les grandes étapes qui ont façonné
-l’État congolais moderne.
-</p>
-</div>
-
-<div class="article">
-<img src="https://static.nationalgeographic.fr/files/styles/image_3200/public/bal1160736.webp?w=900&h=1020">
-<h3>Sur les traces de l’étoile de Bethléem : qu'en dit l'archéologie ?</h3>
-<p>
-L'étoile de Bethléem guidant les rois mages est l’une des scènes les plus reconnaissables de l’imaginaire chrétien : un signe brillant resplendissant au-dessus du lieu où un enfant est né, menant de mystérieux visiteurs venus d’Orient jusqu’au berceau d’un roi nouveau-né. L’Évangile selon Matthieu, le seul livre de la Bible à mentionner cet épisode, décrit une étoile qui s’est levée à l’est, qui a attiré l’attention de « mages » (probablement des prêtres-astrologues de Babylonie ou de Perse), et s’est déplacée devant eux jusqu’à s’arrêter au-dessus du lieu où se trouvait Jésus.</p>
-</div>
-
-</div>
+  <h2>Culture</h2>
+  <div class="articles" id="news-entertainment"></div>
 </section>
 
-<!-- CULTURE -->
 <section class="section">
-<h2>Culture</h2>
-<div class="articles">
-
-<div class="article">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9-HAqahVMZJGiMJjHWmz1QD7hmXCvgosoRg&s">
-<h3>A Paris-La Défense Arena, Gims déroule ses tubes dans une relative solitude</h3>
-<p>
-Rassembler 200 000 personnes en quatre jours. C’est l’exploit que réalise le rappeur Gims en donnant cinq concerts à Paris-La Defense Arena, du 19 au 22 décembre, dont deux samedi, à 14 heures et à 20 heures. Le début d’après-midi, l’heure idéale pour les enfants et les préados qui chantent désormais ses morceaux dans les cours de récréation, de Ciel à Parisienne, en passant par Ninao, des chansons toutes publiées en 2025 et certifiées singles de diamant (50 millions d’équivalents streams).</p>
-</div>
-
-<div class="article">
-<img src="https://academie-kinshasa.cd/wp-content/uploads/2025/12/IMG-20251130-WA0082-scaled-800x530.jpg">
-<h3>exposition survivre rallume la flamme de la résilience</h3>
-<p>
-L’Académie des Beaux-Arts de Kinshasa a accueilli le samedi 29 novembre le vernissage de l’exposition collective Survivre. Entre préservation de la mémoire et documentation d’autant plus significative de la vie quotidienne dans les zones de conflits, Survivre exprime la résilience de la population de la ville de Goma..
-</p>
-</div>
-
-</div>
+  <h2>Sport</h2>
+  <div class="articles" id="news-sports"></div>
 </section>
 
+<script>
+const API_KEY = "pub_a4f1b85bc8574074b6205da5131ed1cc";
+const usedTitles = new Set();
+
+/* Articles de fallback si l'API ne répond pas ou catégorie vide */
+const MOCK = {
+  politics: [
+    { title: "Politique RDC : mesures importantes annoncées", description: "Le gouvernement congolais adopte de nouvelles mesures économiques...", link: "#", image_url: "https://via.placeholder.com/400x200?text=Politique" }
+  ],
+  world: [
+    { title: "International : sommet mondial sur le climat", description: "Les dirigeants mondiaux se réunissent pour discuter des enjeux climatiques...", link: "#", image_url: "https://via.placeholder.com/400x200?text=International" }
+  ],
+  society: [
+    { title: "Société : campagne de sensibilisation contre la drogue", description: "Une nouvelle initiative pour sensibiliser les jeunes à la consommation de drogues...", link: "#", image_url: "https://via.placeholder.com/400x200?text=Société" }
+  ],
+  tech: [
+    { title: "Tech : lancement d'un nouveau satellite", description: "Une startup africaine lance un satellite pour observer l'environnement...", link: "#", image_url: "https://via.placeholder.com/400x200?text=Tech" }
+  ],
+  entertainment: [
+    { title: "Culture : exposition d'art contemporain à Kinshasa", description: "L’exposition met en lumière la créativité locale et internationale...", link: "#", image_url: "https://via.placeholder.com/400x200?text=Culture" }
+  ],
+  sports: [
+    { title: "Sport : victoire historique des Léopards", description: "La RDC remporte un match clé dans la CAN 2025...", link: "#", image_url: "https://via.placeholder.com/400x200?text=Sport" }
+  ]
+};
+
+/* Utils */
+function truncate(text, max = 150) {
+  if (!text) return "";
+  return text.length > max ? text.slice(0, max) + "…" : text;
+}
+
+/* HERO */
+/* HERO prioritaire RDC */
+function fetchHero() {
+  fetch(`https://newsdata.io/api/1/latest?apikey=${API_KEY}&language=fr`)
+    .then(r => r.json())
+    .then(data => {
+      // Cherche d'abord un article mentionnant RDC ou Congo
+      let hero = data.results?.find(a => a.image_url && a.title && a.link &&
+                  (a.title.includes("RDC") || a.title.includes("Congo") ||
+                   (a.description && (a.description.includes("RDC") || a.description.includes("Congo"))))
+                );
+
+      // Si aucun, prend le premier avec image et titre
+      if (!hero) {
+        hero = data.results?.find(a => a.image_url && a.title && a.link);
+      }
+
+      if (hero) {
+        document.getElementById("hero-img").src = hero.image_url;
+        document.getElementById("hero-title").textContent = hero.title;
+        document.getElementById("hero-desc").textContent = truncate(hero.description, 250);
+        document.getElementById("hero-link").href = hero.link;
+        usedTitles.add(hero.title);
+      } else loadHeroMock();
+    })
+    .catch(loadHeroMock);
+}
+function loadHeroMock() {
+  const hero = MOCK.politics[0];
+  document.getElementById("hero-img").src = hero.image_url;
+  document.getElementById("hero-title").textContent = hero.title;
+  document.getElementById("hero-desc").textContent = truncate(hero.description, 250);
+  document.getElementById("hero-link").href = hero.link;
+  usedTitles.add(hero.title);
+}
+
+/* Render */
+function renderArticles(data, containerId, limit, category) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = "";
+
+  const articles = (data.results || [])
+    .filter(a => a.image_url && a.title && a.link && !usedTitles.has(a.title))
+    .slice(0, limit);
+
+  if (!articles.length) {
+    // fallback mock
+    MOCK[category].forEach(a => {
+      container.innerHTML += `
+        <a href="${a.link}" target="_blank" class="article">
+          <img src="${a.image_url}" alt="">
+          <h3>${a.title}</h3>
+          <p>${truncate(a.description)}</p>
+        </a>
+      `;
+      usedTitles.add(a.title);
+    });
+    return;
+  }
+
+  articles.forEach(a => {
+    usedTitles.add(a.title);
+    container.innerHTML += `
+      <a href="${a.link}" target="_blank" class="article">
+        <img src="${a.image_url}" alt="">
+        <h3>${a.title}</h3>
+        <p>${truncate(a.description)}</p>
+      </a>
+    `;
+  });
+}
+
+/* Fetch par catégorie */
+function fetchByCategory(category, containerId, limit = 4) {
+  fetch(`https://newsdata.io/api/1/latest?apikey=${API_KEY}&language=fr&category=${category}`)
+    .then(r => r.json())
+    .then(data => renderArticles(data, containerId, limit, category))
+    .catch(() => renderArticles({ results: [] }, containerId, limit, category));
+}
+
+/* Sections spéciales par mot-clé */
+function fetchByQuery(query, containerId, limit = 4, category) {
+  fetch(`https://newsdata.io/api/1/latest?apikey=${API_KEY}&language=fr&q=${encodeURIComponent(query)}`)
+    .then(r => r.json())
+    .then(data => renderArticles(data, containerId, limit, category))
+    .catch(() => renderArticles({ results: [] }, containerId, limit, category));
+}
+
+/* Chargement */
+fetchHero();
+fetchByCategory("politics", "news-politics");
+fetchByCategory("sports", "news-sports");
+fetchByCategory("technology", "news-tech");
+fetchByCategory("entertainment", "news-entertainment");
+
+fetchByQuery("société africaine", "news-society", 4, "society");
+fetchByQuery("international monde", "news-world", 4, "world");
+</script>
 <!-- LE VERBATIM -->
 <section class="section">
 <h2>Le Verbatim</h2>
@@ -440,177 +482,322 @@ function toggleMenu(){
   document.querySelector('nav').classList.toggle('active');
 }
 </script>
-<!-- === FLOATING GAMES WIDGET === -->
+<title>Jeux et Météo Flottants</title>
 <style>
-#games-fab {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #111;
-  color: #fff;
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  font-size: 26px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 9999;
-  box-shadow: 0 6px 15px rgba(0,0,0,.3);
-}
+  body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#f0f0f0;
+  }
 
-#games-panel {
-  position: fixed;
-  bottom: 90px;
-  right: 20px;
-  width: 300px;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  display: none;
-  z-index: 9999;
-  box-shadow: 0 10px 25px rgba(0,0,0,.25);
-}
+  /* === BOUTONS FLOTTANTS === */
+  #games-fab, #weather-fab{
+    position: fixed;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    z-index:9999;
+    box-shadow:0 6px 15px rgba(0,0,0,.3);
+    transition: bottom 0.3s;
+  }
 
-#games-panel header {
-  padding: 10px 15px;
-  font-weight: bold;
-  border-bottom: 1px solid #eee;
-  display: flex;
-  justify-content: space-between;
-}
+  #games-fab{
+    background:#111;
+    color:#fff;
+    font-size:26px;
+  }
+  #games-fab img{width:24px;height:24px}
 
-#games-panel button {
-  background: #111;
-  color: #fff;
-  border: none;
-  padding: 8px;
-  width: 100%;
-  margin: 8px 0;
-  cursor: pointer;
-  border-radius: 4px;
-}
+  #weather-fab{
+    background:#000;
+  }
+  #weather-fab img{width:26px;height:26px}
 
-#game-area {
-  padding: 10px;
-  text-align: center;
-}
-canvas { background:#000; display:block; margin:auto; }
-input{font-weight:bold;font-size:16px;}
+  /* === PANELS === */
+  #games-panel, #weather-panel{
+    position:fixed;
+    right:20px;
+    width:300px;
+    background:#fff;
+    border-radius:8px;
+    display:none;
+    z-index:9999;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+  }
+
+  #games-panel header, #weather-panel header{
+    padding:10px;
+    background:#111;
+    color:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-radius:8px 8px 0 0;
+    font-weight:bold;
+  }
+
+  #game-area, #weather-content{
+    padding:10px;
+    text-align:center;
+  }
+
+  #game-area button{
+    background:#111;
+    color:#fff;
+    border:none;
+    padding:8px;
+    width:100%;
+    margin:6px 0;
+    cursor:pointer;
+    border-radius:4px;
+  }
+
+  canvas{ background:#000; display:block; margin:auto; }
+
+  /* === METEO ANIMATIONS === */
+  #weather-animation{
+    height:80px;
+    background:#eaeaea;
+    position:relative;
+    overflow:hidden;
+  }
+  .cloud{
+    position:absolute;
+    top:25px;
+    width:60px;
+    height:20px;
+    background:#fff;
+    border-radius:20px;
+    animation:cloudMove 18s linear infinite;
+  }
+  .cloud:after{
+    content:"";
+    position:absolute;
+    width:30px;
+    height:30px;
+    background:#fff;
+    border-radius:50%;
+    top:-15px;
+    left:10px;
+  }
+  .rain{
+    position:absolute;
+    width:2px;
+    height:12px;
+    background:#4da3ff;
+    animation:rain 1s linear infinite;
+  }
+
+  @keyframes cloudMove{
+    from{left:-80px} to{left:320px}
+  }
+  @keyframes rain{
+    from{top:-10px} to{top:90px}
+  }
+
+  .close{cursor:pointer}
+
+  /* MOBILE */
+  @media(max-width:480px){
+    #games-panel, #weather-panel{width:90%; right:5%}
+  }
+
 </style>
+<body>
 
-<div id="games-fab">♟️</div>
+<!-- === BOUTON JEUX === -->
+<div id="games-fab">
+  <img src="https://img.icons8.com/android/24/FFFFFF/dice.png" alt="dice"/>
+</div>
 
 <div id="games-panel">
   <header>
     Jeux
-    <span style="cursor:pointer" onclick="closeGames()">✕</span>
+    <span class="close" onclick="closeGames()">✕</span>
   </header>
   <div id="game-area">
-    <button onclick="startSnake()">🐍 Serpent</button>
-    <button onclick="startSudoku()">🧩 Sudoku</button>
+    <button onclick="startSnake()">🐍 Snake</button>
     <div id="game-content"></div>
   </div>
 </div>
 
+<!-- === BOUTON METEO === -->
+<div id="weather-fab">
+  <img src="https://img.icons8.com/android/24/FFFFFF/partly-cloudy-day.png" alt="meteo"/>
+</div>
+
+<div id="weather-panel">
+  <header>
+    Météo
+    <span class="close" onclick="closeWeather()">✕</span>
+  </header>
+  <div id="weather-animation"></div>
+  <div id="weather-content">Chargement...</div>
+</div>
+
 <script>
-const fab = document.getElementById("games-fab");
-const panel = document.getElementById("games-panel");
-const content = document.getElementById("game-content");
+  // === ELEMENTS ===
+  const weatherFab = document.getElementById("weather-fab");
+  const weatherPanel = document.getElementById("weather-panel");
+  const weatherContent = document.getElementById("weather-content");
+  const weatherAnim = document.getElementById("weather-animation");
 
-fab.onclick = () => panel.style.display = "block";
-function closeGames(){ panel.style.display="none"; content.innerHTML=""; }
+  const gamesFab = document.getElementById("games-fab");
+  const gamesPanel = document.getElementById("games-panel");
+  const gameContent = document.getElementById("game-content");
 
-/* === SNAKE GAME === */
-function startSnake(){
-  content.innerHTML = '<canvas id="snake" width="260" height="260"></canvas>';
-  const c = document.getElementById("snake");
-  const ctx = c.getContext("2d");
-  let x=120,y=120,dx=20,dy=0,foodX=100,foodY=100,trail=[];
-  
-  document.onkeydown=e=>{
-    if(e.key==="ArrowUp"){dx=0;dy=-20;}
-    if(e.key==="ArrowDown"){dx=0;dy=20;}
-    if(e.key==="ArrowLeft"){dx=-20;dy=0;}
-    if(e.key==="ArrowRight"){dx=20;dy=0;}
-  };
+  const baseBottom = 20; // distance base du bas
 
-  setInterval(()=>{
-    x+=dx;y+=dy;
-    if(x<0||y<0||x>240||y>240){trail=[];x=120;y=120;}
-    ctx.fillStyle="black";ctx.fillRect(0,0,260,260);
-    ctx.fillStyle="lime";
-    trail.push({x,y});
-    if(trail.length>5)trail.shift();
-    trail.forEach(t=>ctx.fillRect(t.x,t.y,18,18));
-    ctx.fillStyle="red";ctx.fillRect(foodX,foodY,18,18);
-    if(x===foodX&&y===foodY){
-      foodX=Math.floor(Math.random()*13)*20;
-      foodY=Math.floor(Math.random()*13)*20;
-      trail.push({x,y});
+  // === OUVERTURE/FERMETURE JEUX ===
+  gamesFab.onclick = () => {
+    if(gamesPanel.style.display === "block"){
+      closeGames();
+    } else {
+      gamesPanel.style.display = "block";
+      adjustWeatherPosition();
     }
-  },150);
-}
+  }
 
-/* === SUDOKU JOUABLE === */
-function startSudoku(){
-  content.innerHTML = `
-    <p style="font-size:14px;margin-bottom:5px;">Sudoku - Complétez la grille</p>
-    <table style="margin:auto;border-collapse:collapse;">
-      ${[0,1,2,3,4,5,6,7,8].map(r=>{
-        const rows = [
-          [5,3,null,null,7,null,null,null,null],
-          [6,null,null,1,9,5,null,null,null],
-          [null,9,8,null,null,null,null,6,null],
-          [8,null,null,null,6,null,null,null,3],
-          [4,null,null,8,null,3,null,null,1],
-          [7,null,null,null,2,null,null,null,6],
-          [null,6,null,null,null,null,2,8,null],
-          [null,null,null,4,1,9,null,null,5],
-          [null,null,null,null,8,null,null,7,9]
-        ];
-        return `<tr>`+
-        rows[r].map(c=>`<td style="border:1px solid #333;width:30px;height:30px">
-          <input style="width:100%;height:100%;border:0;text-align:center;font-weight:bold;font-size:16px"
-                 maxlength="1" value="${c!==null?c:""}" ${c!==null?"readonly":""}>
-        </td>`).join("")+
-        `</tr>`;
-      }).join("")}
-    </table>
-    <div style="text-align:center;margin-top:10px;">
-      <button style="background:#111;color:#fff;padding:6px 12px;border-radius:4px;margin-top:5px;" onclick="checkSudoku()">Vérifier</button>
-      <p id="sudoku-msg" style="margin-top:5px;color:#d00;font-weight:bold;"></p>
-    </div>
-  `;
-}
+  function closeGames(){
+    gamesPanel.style.display = "none";
+    gameContent.innerHTML = "";
+    adjustWeatherPosition();
+  }
 
-function checkSudoku(){
-  const table = content.querySelector("table");
-  const inputs = table.querySelectorAll("input");
-  const solution = [
-    [5,3,4,6,7,8,9,1,2],
-    [6,7,2,1,9,5,3,4,8],
-    [1,9,8,3,4,2,5,6,7],
-    [8,5,9,7,6,1,4,2,3],
-    [4,2,6,8,5,3,7,9,1],
-    [7,1,3,9,2,4,8,5,6],
-    [9,6,1,5,3,7,2,8,4],
-    [2,8,7,4,1,9,6,3,5],
-    [3,4,5,2,8,6,1,7,9]
-  ];
+  // === OUVERTURE/FERMETURE METEO ===
+  weatherFab.onclick = () => {
+    if(weatherPanel.style.display === "block"){
+      closeWeather();
+    } else {
+      openWeather();
+    }
+  }
 
-  let correct = true;
-  inputs.forEach((inp,i)=>{
-    const r = Math.floor(i/9), c = i%9;
-    if(parseInt(inp.value)!==solution[r][c]) correct=false;
-  });
+  function openWeather(){
+    weatherPanel.style.display = "block";
+    startWeatherAnim();
+    loadWeather();
+    adjustWeatherPosition();
+  }
 
-  const msg = document.getElementById("sudoku-msg");
-  msg.textContent = correct ? "✅ Sudoku correct ! Bravo !" : "❌ Il reste des erreurs...";
-}
+  function closeWeather(){
+    weatherPanel.style.display = "none";
+    weatherContent.textContent = "";
+    weatherAnim.innerHTML = "";
+    adjustWeatherPosition();
+  }
+
+  // === AJUSTEMENT POSITION METEO ===
+  function adjustWeatherPosition(){
+    const gamesOpen = gamesPanel.style.display === "block";
+    const panelHeight = 300; // approx hauteur panel jeux
+
+    if(gamesOpen){
+      weatherFab.style.bottom = `${baseBottom + panelHeight + 20}px`;
+      weatherPanel.style.bottom = `${baseBottom + panelHeight + 20 + 55}px`;
+    } else {
+      weatherFab.style.bottom = `${baseBottom + 55 + 20}px`;
+      weatherPanel.style.bottom = `${baseBottom + 55 + 20 + 55}px`;
+    }
+
+    gamesFab.style.bottom = `${baseBottom}px`;
+    gamesPanel.style.bottom = `${baseBottom + 55}px`;
+  }
+
+  adjustWeatherPosition(); // initial
+
+  // === METEO ANIMATION ===
+  function startWeatherAnim(){
+    weatherAnim.innerHTML = "";
+    for(let i=0;i<2;i++){
+      const c = document.createElement("div");
+      c.className = "cloud";
+      c.style.top = `${20 + i*20}px`;
+      c.style.animationDuration = `${15 + i*5}s`;
+      weatherAnim.appendChild(c);
+    }
+    for(let i=0;i<10;i++){
+      const r = document.createElement("div");
+      r.className = "rain";
+      r.style.left = `${i*25}px`;
+      r.style.animationDelay = `${Math.random()}s`;
+      weatherAnim.appendChild(r);
+    }
+  }
+
+  function loadWeather(){
+    weatherContent.textContent = "Chargement...";
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(pos => {
+        const lat = pos.coords.latitude;
+        const lon = pos.coords.longitude;
+        fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&timezone=auto`)
+        .then(res => res.json())
+        .then(data => {
+          const w = data.current_weather;
+          weatherContent.innerHTML = `
+            <strong>Température :</strong> ${w.temperature} °C<br>
+            <strong>Vent :</strong> ${w.windspeed} km/h<br>
+            <strong>Heure :</strong> ${w.time}
+          `;
+        }).catch(()=>{
+          weatherContent.textContent = "Impossible de charger la météo.";
+        });
+      }, ()=>{
+        weatherContent.textContent = "Géolocalisation refusée.";
+      });
+    } else {
+      weatherContent.textContent = "Géolocalisation non supportée.";
+    }
+  }
+
+  // === SNAKE ===
+  function startSnake(){
+    gameContent.innerHTML = '<canvas id="snake" width="260" height="260"></canvas>';
+    const c = document.getElementById("snake");
+    const ctx = c.getContext("2d");
+
+    let x=120,y=120,dx=20,dy=0;
+    let foodX=100,foodY=100;
+    let trail=[];
+
+    document.onkeydown = e => {
+      if(e.key==="ArrowUp"){dx=0;dy=-20;}
+      if(e.key==="ArrowDown"){dx=0;dy=20;}
+      if(e.key==="ArrowLeft"){dx=-20;dy=0;}
+      if(e.key==="ArrowRight"){dx=20;dy=0;}
+    };
+
+    setInterval(()=>{
+      x+=dx; y+=dy;
+      if(x<0||y<0||x>240||y>240){ trail=[]; x=120; y=120; }
+
+      ctx.fillStyle="#000";
+      ctx.fillRect(0,0,260,260);
+
+      trail.push({x,y});
+      if(trail.length>5) trail.shift();
+
+      ctx.fillStyle="lime";
+      trail.forEach(t=>ctx.fillRect(t.x,t.y,18,18));
+
+      ctx.fillStyle="red";
+      ctx.fillRect(foodX,foodY,18,18);
+
+      if(x===foodX && y===foodY){
+        foodX=Math.floor(Math.random()*13)*20;
+        foodY=Math.floor(Math.random()*13)*20;
+        trail.push({x,y});
+      }
+    },150);
+  }
 </script>
-<!-- === END FLOATING GAMES === -->
+
 <!-- === POPUP SPONSOR TERRA VOYAGE AVEC FOND FLOU === -->
 <style>
 /* Flou de fond */
@@ -688,4 +875,3 @@ window.onload = () => setTimeout(showPopup, 2000);
 
 </body>
 </html>
-
