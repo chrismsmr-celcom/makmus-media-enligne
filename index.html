@@ -778,45 +778,76 @@ function toggleMenu(){
   }
 
   // === SNAKE ===
-  function startSnake(){
-    gameContent.innerHTML = '<canvas id="snake" width="260" height="260"></canvas>';
-    const c = document.getElementById("snake");
-    const ctx = c.getContext("2d");
 
-    let x=120,y=120,dx=20,dy=0;
-    let foodX=100,foodY=100;
-    let trail=[];
+function startSnake(){
+  gameContent.innerHTML = '<canvas id="snake" width="260" height="260"></canvas>';
+  const c = document.getElementById("snake");
+  const ctx = c.getContext("2d");
 
-    document.onkeydown = e => {
-      if(e.key==="ArrowUp"){dx=0;dy=-20;}
-      if(e.key==="ArrowDown"){dx=0;dy=20;}
-      if(e.key==="ArrowLeft"){dx=-20;dy=0;}
-      if(e.key==="ArrowRight"){dx=20;dy=0;}
-    };
+  let x=120,y=120,dx=20,dy=0;
+  let foodX=100,foodY=100;
+  let trail=[];
+  let dirX=dx, dirY=dy; // direction actuelle
 
-    setInterval(()=>{
-      x+=dx; y+=dy;
-      if(x<0||y<0||x>240||y>240){ trail=[]; x=120; y=120; }
+  // ==== Clavier ====
+  document.onkeydown = e => {
+    if(e.key==="ArrowUp" && dy===0){dx=0;dy=-20;}
+    if(e.key==="ArrowDown" && dy===0){dx=0;dy=20;}
+    if(e.key==="ArrowLeft" && dx===0){dx=-20;dy=0;}
+    if(e.key==="ArrowRight" && dx===0){dx=20;dy=0;}
+  };
 
-      ctx.fillStyle="#000";
-      ctx.fillRect(0,0,260,260);
+  // ==== Tactile / Swipe pour mobile ====
+  let touchStartX=0, touchStartY=0;
+  c.addEventListener("touchstart", e=>{
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  });
+  c.addEventListener("touchend", e=>{
+    const touchEndX = e.changedTouches[0].clientX;
+    const touchEndY = e.changedTouches[0].clientY;
+    const diffX = touchEndX - touchStartX;
+    const diffY = touchEndY - touchStartY;
 
+    if(Math.abs(diffX) > Math.abs(diffY)){
+      if(diffX>0 && dx===0){dx=20; dy=0;}      // droite
+      else if(diffX<0 && dx===0){dx=-20; dy=0;} // gauche
+    } else {
+      if(diffY>0 && dy===0){dx=0; dy=20;}       // bas
+      else if(diffY<0 && dy===0){dx=0; dy=-20;} // haut
+    }
+  });
+
+  // ==== Jeu ====
+  const size=260;
+  const cell=20;
+  const maxCells=size/cell;
+
+  setInterval(()=>{
+    x+=dx; y+=dy;
+
+    // rebond sur les murs
+    if(x<0||y<0||x>=size||y>=size){ trail=[]; x=120; y=120; dx=20; dy=0; }
+
+    ctx.fillStyle="#000";
+    ctx.fillRect(0,0,size,size);
+
+    trail.push({x,y});
+    if(trail.length>5) trail.shift();
+
+    ctx.fillStyle="lime";
+    trail.forEach(t=>ctx.fillRect(t.x,t.y,cell-2,cell-2));
+
+    ctx.fillStyle="red";
+    ctx.fillRect(foodX,foodY,cell-2,cell-2);
+
+    if(x===foodX && y===foodY){
+      foodX=Math.floor(Math.random()*maxCells)*cell;
+      foodY=Math.floor(Math.random()*maxCells)*cell;
       trail.push({x,y});
-      if(trail.length>5) trail.shift();
-
-      ctx.fillStyle="lime";
-      trail.forEach(t=>ctx.fillRect(t.x,t.y,18,18));
-
-      ctx.fillStyle="red";
-      ctx.fillRect(foodX,foodY,18,18);
-
-      if(x===foodX && y===foodY){
-        foodX=Math.floor(Math.random()*13)*20;
-        foodY=Math.floor(Math.random()*13)*20;
-        trail.push({x,y});
-      }
-    },150);
-  }
+    }
+  },150);
+}
 </script>
 
 <!-- === POPUP SPONSOR TERRA VOYAGE AVEC FOND FLOU === -->
