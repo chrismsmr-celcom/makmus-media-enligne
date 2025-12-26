@@ -23,7 +23,10 @@
 
 <!-- Favicon .ico pour IE et desktop -->
 <link rel="shortcut icon" href="https://i.postimg.cc/x88LbhZp/2-20251224-213424-0001.ico" type="image/x-icon">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Web app manifest pour PWA -->
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#ffffff"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MakMus – Actualités, Société & Le Verbatim</title>
 <meta name="description" content="MakMus – Actualités, Société, Culture et Science en RDC et dans le monde.">
 <meta name="keywords" content="MakMus, actualités, RDC, culture, société, science, sport">
@@ -778,76 +781,107 @@ function toggleMenu(){
   }
 
   // === SNAKE ===
+  function startSnake(){
+    gameContent.innerHTML = '<canvas id="snake" width="260" height="260"></canvas>';
+    const c = document.getElementById("snake");
+    const ctx = c.getContext("2d");
 
-function startSnake(){
-  gameContent.innerHTML = '<canvas id="snake" width="260" height="260"></canvas>';
-  const c = document.getElementById("snake");
-  const ctx = c.getContext("2d");
+    let x=120,y=120,dx=20,dy=0;
+    let foodX=100,foodY=100;
+    let trail=[];
 
-  let x=120,y=120,dx=20,dy=0;
-  let foodX=100,foodY=100;
-  let trail=[];
-  let dirX=dx, dirY=dy; // direction actuelle
+    document.onkeydown = e => {
+      if(e.key==="ArrowUp"){dx=0;dy=-20;}
+      if(e.key==="ArrowDown"){dx=0;dy=20;}
+      if(e.key==="ArrowLeft"){dx=-20;dy=0;}
+      if(e.key==="ArrowRight"){dx=20;dy=0;}
+    };
 
-  // ==== Clavier ====
-  document.onkeydown = e => {
-    if(e.key==="ArrowUp" && dy===0){dx=0;dy=-20;}
-    if(e.key==="ArrowDown" && dy===0){dx=0;dy=20;}
-    if(e.key==="ArrowLeft" && dx===0){dx=-20;dy=0;}
-    if(e.key==="ArrowRight" && dx===0){dx=20;dy=0;}
-  };
+    setInterval(()=>{
+      x+=dx; y+=dy;
+      if(x<0||y<0||x>240||y>240){ trail=[]; x=120; y=120; }
 
-  // ==== Tactile / Swipe pour mobile ====
-  let touchStartX=0, touchStartY=0;
-  c.addEventListener("touchstart", e=>{
-    touchStartX = e.touches[0].clientX;
-    touchStartY = e.touches[0].clientY;
-  });
-  c.addEventListener("touchend", e=>{
-    const touchEndX = e.changedTouches[0].clientX;
-    const touchEndY = e.changedTouches[0].clientY;
-    const diffX = touchEndX - touchStartX;
-    const diffY = touchEndY - touchStartY;
+      ctx.fillStyle="#000";
+      ctx.fillRect(0,0,260,260);
 
-    if(Math.abs(diffX) > Math.abs(diffY)){
-      if(diffX>0 && dx===0){dx=20; dy=0;}      // droite
-      else if(diffX<0 && dx===0){dx=-20; dy=0;} // gauche
-    } else {
-      if(diffY>0 && dy===0){dx=0; dy=20;}       // bas
-      else if(diffY<0 && dy===0){dx=0; dy=-20;} // haut
-    }
-  });
-
-  // ==== Jeu ====
-  const size=260;
-  const cell=20;
-  const maxCells=size/cell;
-
-  setInterval(()=>{
-    x+=dx; y+=dy;
-
-    // rebond sur les murs
-    if(x<0||y<0||x>=size||y>=size){ trail=[]; x=120; y=120; dx=20; dy=0; }
-
-    ctx.fillStyle="#000";
-    ctx.fillRect(0,0,size,size);
-
-    trail.push({x,y});
-    if(trail.length>5) trail.shift();
-
-    ctx.fillStyle="lime";
-    trail.forEach(t=>ctx.fillRect(t.x,t.y,cell-2,cell-2));
-
-    ctx.fillStyle="red";
-    ctx.fillRect(foodX,foodY,cell-2,cell-2);
-
-    if(x===foodX && y===foodY){
-      foodX=Math.floor(Math.random()*maxCells)*cell;
-      foodY=Math.floor(Math.random()*maxCells)*cell;
       trail.push({x,y});
+      if(trail.length>5) trail.shift();
+
+      ctx.fillStyle="lime";
+      trail.forEach(t=>ctx.fillRect(t.x,t.y,18,18));
+
+      ctx.fillStyle="red";
+      ctx.fillRect(foodX,foodY,18,18);
+
+      if(x===foodX && y===foodY){
+        foodX=Math.floor(Math.random()*13)*20;
+        foodY=Math.floor(Math.random()*13)*20;
+        trail.push({x,y});
+      }
+    },150);
+  }
+</script>
+
+<!-- === BOUTON PARTAGE FLOTTANT === -->
+<div id="share-fab" style="position:fixed;right:20px;bottom:170px;width:55px;height:55px;border-radius:50%;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:9999;box-shadow:0 6px 15px rgba(0,0,0,.3);">
+  <img src="https://img.icons8.com/android/24/FFFFFF/share.png" alt="share"/>
+</div>
+
+<!-- === PANEL PARTAGE === -->
+<div id="share-panel" style="position:fixed;right:40px;bottom:60px;width:250px;background:#fff;border-radius:8px;display:none;z-index:9999;box-shadow:0 10px 25px rgba(0,0,0,.25);">
+  <header style="padding:10px;background:#111;color:#fff;display:flex;justify-content:space-between;align-items:center;border-radius:8px 8px 0 0;font-weight:bold;">
+    Partager
+    <span class="close" style="cursor:pointer;" onclick="closeShare()">✕</span>
+  </header>
+  <div style="padding:10px;text-align:center;">
+    <button onclick="sharePage('whatsapp')" style="margin:5px;padding:8px;width:80%;border:none;border-radius:4px;background:#25D366;color:#fff;cursor:pointer;">WhatsApp</button>
+    <button onclick="sharePage('facebook')" style="margin:5px;padding:8px;width:80%;border:none;border-radius:4px;background:#3b5998;color:#fff;cursor:pointer;">Facebook</button>
+    <button onclick="sharePage('copy')" style="margin:5px;padding:8px;width:80%;border:none;border-radius:4px;background:#555;color:#fff;cursor:pointer;">Copier le lien</button>
+  </div>
+</div>
+
+<script>
+  const shareFab = document.getElementById("share-fab");
+  const sharePanel = document.getElementById("share-panel");
+
+  // Ouvrir/fermer le panel
+  function toggleShare(){
+    sharePanel.style.display = sharePanel.style.display==="block"?"none":"block";
+  }
+
+  function closeShare(){
+    sharePanel.style.display = "none";
+  }
+
+  shareFab.addEventListener('click', toggleShare);
+  shareFab.addEventListener('touchstart', e=>{
+    e.preventDefault();
+    toggleShare();
+  });
+
+  // Fonction de partage
+  function sharePage(type){
+    const url = window.location.href;
+    const title = document.title;
+
+    // Web Share API mobile
+    if(navigator.share){
+      navigator.share({
+        title: title,
+        url: url
+      }).catch(console.log);
+      return;
     }
-  },150);
-}
+
+    // Fallback desktop
+    if(type==="copy"){
+      navigator.clipboard.writeText(url).then(()=>alert("Lien copié !"));
+    } else if(type==="whatsapp"){
+      window.open(`https://wa.me/?text=${encodeURIComponent(title+" "+url)}`, "_blank");
+    } else if(type==="facebook"){
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, "_blank");
+    }
+  }
 </script>
 
 <!-- === POPUP SPONSOR TERRA VOYAGE AVEC FOND FLOU === -->
