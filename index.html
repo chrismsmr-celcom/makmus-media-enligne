@@ -261,7 +261,32 @@ footer{
       <li><a href="#apropos">À propos</a></li>
     </ul>
   </nav>
+
 </header>
+<!-- Bandeau Date -->
+<section id="header-date-bar" style="width:100%;background:#D3D3D3;color:#000000;font-size:0.9rem;display:flex;justify-content:space-between;align-items:center;padding:0.5rem 1rem; 2px 5px rgba(0,0,0,0.2);">
+  <div class="date-today">
+    <span id="todays-date"></span>
+  </div>
+  <div class="todays-paper">
+    <a href="https://www.nytimes.com/section/todayspaper" target="_blank" style="color:#000000;text-decoration:none;font-weight:500;">Le papier d'aujourd'hui</a>
+  </div>
+</section>
+
+<script>
+function formatFrenchDate(date) {
+  const jours = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
+  const mois = ["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
+  const jour = jours[date.getDay()];
+  const numero = date.getDate();
+  const moisNom = mois[date.getMonth()];
+  const annee = date.getFullYear();
+  return `${jour} ${numero} ${moisNom} ${annee}`;
+}
+
+document.getElementById("todays-date").textContent = formatFrenchDate(new Date());
+</script>
+
 
 <script>
 const menuToggle = document.getElementById('menu-toggle');
@@ -283,6 +308,91 @@ menuToggle.addEventListener('click', () => {
     </div>
   </a>
 </section>
+
+<!-- ================= INFO BAR ================= -->
+<section id="info-bar" style="width:100%;background:#d3d3d3;border-top:1px solid #555;border-bottom:1px solid #555;overflow:hidden;padding:0.5rem 1rem;font-size:0.9rem;color:#111;font-weight:500;">
+  <div id="info-bar-wrapper" style="white-space:nowrap;display:inline-block;">
+    <!-- Les infos seront injectées ici via JS -->
+  </div>
+</section>
+
+<style>
+#info-bar-wrapper {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scrollInfo 60s linear infinite; /* plus lent : 60s pour parcourir */
+}
+
+@keyframes scrollInfo {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@media (max-width:768px) {
+  #info-bar-wrapper { animation-duration:90s; } /* plus lent sur mobile */
+  .info-item {
+  display: inline-block;
+  margin-right: 4rem; /* plus d'espace entre les titres */
+}
+@media (max-width:768px) {
+  .info-item { margin-right: 3rem; } /* mobile un peu moins */
+}
+
+}</style>
+
+<script>
+(function(){
+  const CURRENT_API_KEY = "vuzX3RWmrA_FHCjrIqtyLdi4jZiDeGs5JpzTwwH4Sztskhnd";
+  const CACHE_KEY = "infoBarSocietyCache";
+  const CACHE_TIME_KEY = "infoBarSocietyCacheTime";
+  const CACHE_DURATION = 2 * 60 * 60 * 1000; // 2h
+
+  const wrapper = document.getElementById("info-bar-wrapper");
+
+  async function loadInfoBar() {
+    try {
+      // Lire cache
+      const cached = localStorage.getItem(CACHE_KEY);
+      const cachedTime = localStorage.getItem(CACHE_TIME_KEY);
+      if (cached && cachedTime && Date.now() - cachedTime < CACHE_DURATION) {
+        const headlines = JSON.parse(cached);
+        wrapper.innerHTML = headlines.map(h => `<span class="info-item">${h}</span>`).join('');
+        return;
+      }
+
+      // Fetch Current API, catégorie société
+      const res = await fetch(`https://api.currentsapi.services/v1/latest-news?category=society&language=fr&apiKey=${CURRENT_API_KEY}`);
+      const data = await res.json();
+      const articles = data.news || [];
+      const headlines = articles.map(a => a.title || "Actualité non disponible").slice(0, 10);
+
+      if (!headlines.length) throw "empty";
+
+      // Afficher
+      wrapper.innerHTML = headlines.map(h => `<span class="info-item">${h}</span>`).join('');
+
+      // Stocker cache
+      localStorage.setItem(CACHE_KEY, JSON.stringify(headlines));
+      localStorage.setItem(CACHE_TIME_KEY, Date.now());
+
+    } catch (err) {
+      console.warn("Barre info Current API erreur ou vide :", err);
+      // fallback statique
+      const fallback = [
+        "La société française se mobilise pour l'environnement.",
+        "Nouvelles initiatives locales pour l'éducation.",
+        "Événements culturels majeurs en cours."
+      ];
+      wrapper.innerHTML = fallback.map(h => `<span class="info-item">${h}</span>`).join('');
+    }
+  }
+
+  loadInfoBar();
+})();
+</script>
+
+
+
 <!-- ACCUEIL -->
 <section class="section">
 <h2>Accueil</h2>
@@ -338,8 +448,6 @@ Un espace où la parole laisse une empreinte, où la mémoire dépasse la vie po
 
 <script>
 const API_KEY = "pub_a4f1b85bc8574074b6205da5131ed1cc";
-const CURRENTS_API_KEY = "vuzX3RWmrA_FHCjrIqtyLdi4jZiDeGs5JpzTwwH4Sztskhnd";
-
 const CACHE_DURATION = 2 * 60 * 60 * 1000; // 2 heures
 const usedTitles = new Set();
 
@@ -461,72 +569,6 @@ fetchByCategory("technology", "news-tech");
 fetchByCategory("entertainment", "news-entertainment");
 fetchByQuery("international monde", "news-world", 4, "world");
 fetchSociety("news-society", 4);
-</script>
-
-<script>
-const CURRENTS_API_KEY = "vuzX3RWmrA_FHCjrIqtyLdi4jZiDeGs5JpzTwwH4Sztskhnd";
-
-/* =======================
-   SOCIÉTÉ — AFFICHAGE GARANTI
-======================= */
-async function fetchSociety(containerId, limit = 4) {
-  const cacheKey = "society_universal";
-  const cached = localStorage.getItem(cacheKey);
-  const time = localStorage.getItem(cacheKey + "_time");
-
-  // 1️⃣ Cache valide
-  if (cached && time && Date.now() - time < CACHE_DURATION) {
-    renderArticles(
-      { results: JSON.parse(cached) },
-      containerId,
-      limit,
-      "society"
-    );
-    return;
-  }
-
-  try {
-    // 2️⃣ Requête LARGE (passe partout)
-    const res = await fetch(
-      `https://api.currentsapi.services/v1/latest-news?language=fr&apiKey=${CURRENTS_API_KEY}`
-    );
-    const data = await res.json();
-
-    let articles = (data.news || []).map(a => ({
-      title: a.title || "Actualité en cours",
-      description: a.description || "Information en cours de mise à jour.",
-      link: a.url || "#",
-      image_url: a.image || "https://via.placeholder.com/400x200?text=Actualité"
-    }));
-
-    // 3️⃣ Si vide → MOCK
-    if (!articles.length) throw "empty";
-
-    articles = articles.slice(0, limit);
-
-    localStorage.setItem(cacheKey, JSON.stringify(articles));
-    localStorage.setItem(cacheKey + "_time", Date.now());
-
-    renderArticles(
-      { results: articles },
-      containerId,
-      limit,
-      "society"
-    );
-  } catch (e) {
-    // 4️⃣ Cache ou MOCK
-    if (cached) {
-      renderArticles(
-        { results: JSON.parse(cached) },
-        containerId,
-        limit,
-        "society"
-      );
-    } else {
-      renderArticles({ results: [] }, containerId, limit, "society");
-    }
-  }
-}
 </script>
 
 <!-- LE VERBATIM -->
