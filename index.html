@@ -320,7 +320,7 @@ menuToggle.addEventListener('click', () => {
 #info-bar-wrapper {
   display: inline-block;
   padding-left: 100%;
-  animation: scrollInfo 60s linear infinite; /* plus lent : 60s pour parcourir */
+  animation: scrollInfo linear infinite;
 }
 
 @keyframes scrollInfo {
@@ -347,7 +347,9 @@ menuToggle.addEventListener('click', () => {
   const CACHE_TIME_KEY = "infoBarSocietyCacheTime";
   const CACHE_DURATION = 2 * 60 * 60 * 1000; // 2h
 
-  const wrapper = document.getElementById("info-bar-wrapper");
+const wrapper = document.getElementById("info-bar-wrapper");
+const speedPerPixel = 0.05; // secondes par pixel
+wrapper.style.animationDuration = `${wrapper.scrollWidth * speedPerPixel}s`;
 
   async function loadInfoBar() {
     try {
