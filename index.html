@@ -577,24 +577,46 @@ fetchSociety("news-society", 4);
 <section class="section">
 <h2>Le Verbatim</h2>
 <p>
-<strong>Le Verbatim</strong> est le journal hebdomadaire de MakMus.
-Un espace d’analyse, d’opinion et de réflexion,
-dans la tradition du journalisme de fond.
-</p> 
-    <title>CAN 2025 : RDC – Sénégal, l’éternel duel</title>
-  <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; background: #f9f9f9; color: #111; }
-    h1 { color: #d32f2f; text-align: center; margin-bottom: 0.3em; }
-    h2 { color: #555; margin-top: 30px; }
-    p { margin: 15px 0; }
-    .chapeau { font-style: italic; font-size: 1.1em; color: #333; }
-    .article-container { max-width: 900px; margin: auto; background: #fff; padding: 30px; box-shadow: 0 0 20px rgba(0,0,0,0.1); border-radius: 10px; }
-    iframe { border-radius: 8px; box-shadow: 0 2px 8px rgba(63,69,81,0.16); }
-    .canva-credit { display: block; font-size: 0.9em; color: #555; text-align: right; margin-top: 5px; }
-  </style>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Journal en ligne - RDC vs Sénégal</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #f9f9f9; margin: 20px; color: #111; }
+  .article-preview { max-width: 800px; margin:auto; padding: 15px; border:1px solid #ddd; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.05); margin-bottom:20px; background:#fff;}
+  .article-preview h2 { color:#d32f2f; margin-bottom:5px; }
+  .article-preview p { margin:10px 0; color:#333; }
+  .article-preview .chapeau { font-style:italic; color:#555; }
+  .article-preview a { color:#d32f2f; font-weight:bold; text-decoration:none; }
+
+  /* Modal */
+  .modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; overflow:auto; background:rgba(0,0,0,0.8); z-index:1000; }
+  .modal-content { background:#fff; margin:50px auto; padding:20px; max-width:900px; border-radius:8px; position:relative; box-shadow:0 0 20px rgba(0,0,0,0.3); }
+  .modal-content h1 { color:#d32f2f; text-align:center; margin-bottom:0.3em; }
+  .modal-content h2 { color:#555; margin-top:30px; }
+  .modal-content p { margin:15px 0; line-height:1.6; }
+  .modal-content .chapeau { font-style:italic; color:#333; font-size:1.1em; }
+  .close-btn { position:absolute; top:10px; right:20px; font-size:28px; text-decoration:none; color:#d32f2f; }
+  iframe { border-radius:8px; box-shadow:0 2px 8px rgba(63,69,81,0.16); }
+  .canva-credit { display:block; font-size:0.9em; color:#555; text-align:right; margin-top:5px; }
+</style>
 </head>
 <body>
-  <div class="article-container">
+
+<!-- Aperçu compact -->
+<div class="article-preview">
+  <h2>CAN 2025 : RDC – Sénégal, l’éternel duel</h2>
+  <p class="chapeau">Un match au goût de revanche</p>
+  <p>Ce rendez-vous face au Sénégal n’est pas un match ordinaire pour la RDC. Il ravive une série de confrontations récentes où les Léopards ont souvent buté sur un adversaire devenu référence du football africain…</p>
+  <a href="#" onclick="document.getElementById('modalArticle').style.display='block'; return false;">Lire l'article complet →</a>
+</div>
+
+<!-- Modal pour article complet -->
+<div id="modalArticle" class="modal">
+  <div class="modal-content">
+    <a href="#" class="close-btn" onclick="document.getElementById('modalArticle').style.display='none'; return false;">&times;</a>
 
     <h1>CAN 2025 : RDC – Sénégal, l’éternel duel</h1>
     <h2>Un match au goût de revanche</h2>
@@ -607,7 +629,7 @@ dans la tradition du journalisme de fond.
     </div>
     <a class="canva-credit" href="https://www.canva.com/design/DAG8uMusLqc/tcDs6AbbwdfnBUlu_MqMYg/view?utm_content=DAG8uMusLqc&utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank" rel="noopener">Black and White Classic Vintage Minimalist Newspaper Finance Report Presentation par Christopher Musumary</a>
 
-    <!-- Texte de l'article -->
+    <!-- Texte complet -->
     <p class="chapeau">Ce rendez-vous face au Sénégal n’est pas un match ordinaire pour la RDC. Il ravive une série de confrontations récentes où les Léopards ont souvent buté sur un adversaire devenu référence du football africain.</p>
 
     <p>Lors des dernières éliminatoires de la Coupe du monde, la RDC s’est une nouvelle fois inclinée face aux Lions de la Teranga, laissant un sentiment d’inachevé et de frustration.</p>
@@ -625,8 +647,20 @@ dans la tradition du journalisme de fond.
     <p>Quelle que soit l’issue, ce match dira beaucoup sur la capacité de cette sélection à assumer ses ambitions, à imposer son identité et à regarder l’avenir avec confiance. Il pourrait marquer le début d’une nouvelle ère, où la RDC cesse de subir et commence enfin à dominer ses confrontations face aux adversaires les plus coriaces.</p>
 
   </div>
-<a href="#" style="font-weight:700;color:#0056b3">Lire le dernier numéro</a>
-</section>
+</div>
+
+<script>
+  // Fermer le modal en cliquant en dehors
+  window.onclick = function(event) {
+    var modal = document.getElementById('modalArticle');
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+
+</body>
+</html>
 
 <!-- A PROPOS -->
 <section class="section">
